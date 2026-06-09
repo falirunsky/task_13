@@ -1,0 +1,13 @@
+# восстановление классов сущностей и DbContext
+
+dotnet ef dbcontext scaffold \
+  "Server=localhost,1433;Database=PhoneBookDB;User Id=sa;Password=Secret_123;TrustServerCertificate=True;" \
+  Microsoft.EntityFrameworkCore.SqlServer \
+  --output-dir Data \
+  --context PhoneBookDbContext \
+  --context-dir Data \
+  --force
+
+# --output-dir Data
+# --context-dir Data
+# --force

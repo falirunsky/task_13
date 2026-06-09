@@ -1,0 +1,16 @@
+<Window x:Class="task_12.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Телефонная книга" Height="480" Width="700"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Меню">
+                <MenuItem Header="Список контактов" Command="{Binding NavigateToContactsCommand}" />
+                <Separator />
+                <MenuItem Header="О программе"      Command="{Binding NavigateToAboutCommand}" />
+            </MenuItem>
+        </Menu>
+        <ContentControl Content="{Binding CurrentViewModel}" />
+    </DockPanel>
+</Window>

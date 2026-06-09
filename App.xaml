@@ -1,0 +1,31 @@
+<Application x:Class="task_12.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:task_12.ViewModels"
+             xmlns:views="clr-namespace:task_12.Views"
+             xmlns:converters="clr-namespace:task_12.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- BoolToVisibility: True -> Visible, False -> Collapsed -->
+            <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+            <!-- InverseBool: True -> False, False -> True (для IsEnabled) -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+
+            <!-- DataTemplate: ContentControl автоматически подбирает View по типу ViewModel -->
+            <DataTemplate DataType="{x:Type vm:ContactsListViewModel}">
+                <views:ContactsListView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:ContactEditViewModel}">
+                <views:ContactEditView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:AboutViewModel}">
+                <views:AboutView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
